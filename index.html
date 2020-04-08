@@ -3,61 +3,57 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="Css/fondo.css">
     <title>Practica Json</title>
-
-
 </head>
+
+
+<header>
+    <div class="ui pointing menu " >
+        <a class="active item blue " >
+         <h1>MOVIE API </h1> 
+        </a>
+
+    <div class="right menu ">
+          <div class="item ">
+
+            <form action=" " id="formulario">
+
+            <div class="ui action input ">
+                <input type="text" placeholder="Search"aria-label="Search">
+                <input type="submit" value="Busqueda" class="ui secondary button">
+                
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+</header>
+
 
 <body>
 
-
-    <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="inverted circular search link icon"></i>
-      </div>
-
-
-
-    <div class="ui equal width grid">
-        <div class="equal width row">
-            <div class="column">
-
-                <table class="ui very basic collapsing celled table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Year</th>
-                            <th>Type</th>
-                            <th>Foto</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaDatosPelicula">
-                    </tbody>
-                </table>
+    <div class="ui segment">
+        <table class="ui celled table blue" style="text-align:center;">
+            <thead>
+                
+              <tr >  
+                <th>IMAGE</th>
+                <th>TITLE</th>
+                <th>YEAR</th>
+                <th>TIPE</th>
+                <th>DETALLES</th>
+              
+            </tr></thead>
 
 
+            <tbody id="tablaDatosPelicula" >
+ 
+            </tbody >
+           
+            
 
-
-
-
-
-            </div>
-            <div class="column">
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <form action=" " id="formulario">
-
-        <input type="text" placeholder="Search" aria-label="Search">
-        <input type="submit" value="Busqueda">
-
-    </form>
-
-    
     <script type="text/javascript" src="js/funciones.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
