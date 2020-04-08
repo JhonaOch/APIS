@@ -28,14 +28,20 @@ function buscar(url) {
             let html = ''
             peliculas.forEach(pelicula => {
                 html += `
-                <tr>
-                <td>${pelicula.Title}</td>
-                <td>${pelicula.Year}</td>
-                <td>${pelicula.Type}</td>
-                <td><img src="${pelicula.Poster}" alt=""></td>
 
-                <td><a href="">Ver mas</a></td>
+                <tr>
+                <td><img class="ui centered small rounded image raised link green card"  src="${pelicula.Poster}" alt=""></td> 
+                <i class="video icon"></i>
+                
+                <td class="ui placeholder"><i class="file alternate icon"></i><br>${pelicula.Title} </td>
+                
+                <td class="ui placeholder">${pelicula.Year}</td>
+                <td class="ui placeholder">${pelicula.Type}</td>
+                <td class="ui placeholder"><a href="">Ver mas</a></td>
             </tr>
+          
+
+
                 `;
                 console.log(pelicula.Title)
             });
@@ -44,7 +50,12 @@ function buscar(url) {
 
 
         } else {
-            document.querySelector('#tablaDatosPelicula').innerHTML = "<h2>No existe la pelicula.</h2>"
+           
+            
+  
+            document.querySelector('#tablaDatosPelicula').innerHTML = "<h2>    BUSQUEDA NO ENCONTRADA.........</h2>"
+            
+
         }
     };
     xmlhttp.open("GET", url, true)
