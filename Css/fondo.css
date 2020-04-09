@@ -18,3 +18,10 @@ h1{
     background: linear-gradient(110deg, black 10%,rgb(2, 65, 124));
 }
 
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
