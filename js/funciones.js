@@ -45,8 +45,8 @@ function buscar(url) {
 
                 <td class="ui placeholder centered">  
 
-                 <a class="btn btn-primary btn-lg btn purple-gradient" data-toggle="modal" onclick="buscarID('${pelicula.imdbID}')">Descripcion</a>
-                 <h2 id="tablaDatosPelicula2"></h2>
+                <a href="#index1" class="btn btn-primary btn-lg btn young-passion-gradient" data-toggle="modal" onclick="detalles('${pelicula.imdbID}')">Descripcion</a>
+                       
   
                  </td>
 
@@ -80,8 +80,8 @@ function buscar(url) {
 
 
 
-function buscarID(num) {
-    console.log(num)
+function detalles(det) {
+    //console.log(det)
 
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest()
@@ -93,34 +93,35 @@ function buscarID(num) {
             const peliculas = JSON.parse(this.responseText)
             console.log(peliculas);
             let html = `
-                   
-            <div>
-               
-                    <h2 class="modal-title">${peliculas.Title}</h2>
-                    <p class="card-text">Año: ${peliculas.Year}</p>
-                    <p class="card-text">${peliculas.Rated}</p>
-                    <p class="card-text">${peliculas.Released}</p>
-                    <p class="card-text">Tiempo:  ${peliculas.Runtime}</p>
-                    <p class="card-text">Genero:  ${peliculas.Genre}</p>
-                    <p class="card-text">Director:  ${peliculas.Director}</p>
-                    <p class="card-text">Escrito:  ${peliculas.Writer}</p>
-                    <p class="card-text">Trama:  ${peliculas.Plot}</p>
-                    <p class="card-text">Lenguaje:  ${peliculas.Language}</p>
-                    <p class="card-text">Pais:  ${peliculas.Country}</p>
-                    
-               
-            
-        </div>
-    
-
-
+                    <div class="modal-dialog ">
+                        <div class="modal-content md">
+                            <div class="modal-header" style="background-color:rgb(29, 69, 109)" >
+                                <h1 class="modal-title" style="color:white;" >${peliculas.Title != 'N/A' ? peliculas.Title : "Informacion no existente"}</h1>
+                            </div>
+                            <div class="modal-body" >
+                                <h3 class=" ui placeholder card-text" style="color:blue;">
+                                    Año: &nbsp ${peliculas.Year != 'N/A' ? peliculas.Year : "Informacion no existente"}
+                                </h3>
+                                <h3 class= "ui placeholder card-text " style="color:blue;">Rated:&nbsp${peliculas.Rated != 'N/A' ? peliculas.Rated : "Informacion no existente"}</h3>
+                                <h3 class=" ui placeholder card-text" style="color:blue;">Released:&nbsp${peliculas.Released != 'N/A' ? peliculas.Released : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Tiempo: &nbsp ${peliculas.Runtime != 'N/A' ? peliculas.Runtime : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Lenguaje: &nbsp ${peliculas.Language != 'N/A' ? peliculas.Language : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Genero: &nbsp ${peliculas.Genre != 'N/A' ? peliculas.Genre : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Director: &nbsp ${peliculas.Director != 'N/A' ? peliculas.Director : "Informacion no existente"}</h3>
+                                 <h3 class="ui placeholder card-text" style="color:blue;">Pais: &nbsp ${peliculas.Country != 'N/A' ? peliculas.Country : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Escrito:&nbsp  ${peliculas.Writer != 'N/A' ? peliculas.Writer : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Trama: &nbsp ${peliculas.Plot != 'N/A' ? peliculas.Plot : "Informacion no existente"}</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
                 `;
 
-                document.querySelector('#tablaDatosPelicula2').innerHTML = html
+            document.querySelector('#index1').innerHTML = html
         } else {
             // document.querySelector('#ventana1').innerHTML = "<h2>No existe la pelicula.</h2>"
         }
     };
-    xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + num, true)
+    xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + det +"&plot=full", true)
     xmlhttp.send()
 }
