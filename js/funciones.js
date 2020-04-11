@@ -1,4 +1,8 @@
 var peliculas = null;
+var nombre = 'batman';
+var numSiguiente = 1;
+
+
 document.addEventListener('DOMContentLoaded', () => {
     var btnBuscar = document.getElementById("formulario");
     btnBuscar.addEventListener('submit', datos);
@@ -124,4 +128,40 @@ function detalles(det) {
     };
     xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + det +"&plot=full", true)
     xmlhttp.send()
+}
+
+
+
+
+
+function siguiente(num) {
+    numSiguiente = numSiguiente + (num);
+    console.log(numSiguiente)
+
+
+    if (numSiguiente <= 1) {
+        numSiguiente = 1
+        document.getElementById('atras').classList.add("disabled");
+
+    } else {
+        document.getElementById('atras').classList.remove("disabled");
+    }
+
+
+    let html = `
+        <div id="numPagina">
+               
+                    <a class="ui style="color:black ">PAGINA ${numSiguiente} </a>
+               
+        </div>
+    `;
+
+    document.querySelector('#numPagina').innerHTML = html
+
+    let url = "http://www.omdbapi.com/?apikey=a5ac401a&s=" + nombre + "&page=" + numSiguiente
+    console.log(url)
+    buscar(url)
+
+
+
 }
