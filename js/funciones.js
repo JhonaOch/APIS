@@ -123,7 +123,7 @@ function detalles(det) {
 
             document.querySelector('#index1').innerHTML = html
         } else {
-            // document.querySelector('#ventana1').innerHTML = "<h2>No existe la pelicula.</h2>"
+           
         }
     };
     xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + det +"&plot=full", true)
@@ -151,7 +151,7 @@ function siguiente(num) {
     let html = `
         <div id="numPagina">
                
-                    <a class="ui style="color:black ">PAGINA ${numSiguiente} </a>
+                    <a class="ui style="color:black ">PAGE${numSiguiente} </a>
                
         </div>
     `;
