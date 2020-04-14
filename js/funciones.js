@@ -112,9 +112,30 @@ function detalles(det) {
                                 <h3 class="ui placeholder card-text" style="color:blue;">Lenguaje: &nbsp ${peliculas.Language != 'N/A' ? peliculas.Language : "Informacion no existente"}</h3>
                                 <h3 class="ui placeholder card-text" style="color:blue;">Genero: &nbsp ${peliculas.Genre != 'N/A' ? peliculas.Genre : "Informacion no existente"}</h3>
                                 <h3 class="ui placeholder card-text" style="color:blue;">Director: &nbsp ${peliculas.Director != 'N/A' ? peliculas.Director : "Informacion no existente"}</h3>
-                                 <h3 class="ui placeholder card-text" style="color:blue;">Pais: &nbsp ${peliculas.Country != 'N/A' ? peliculas.Country : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Pais: &nbsp ${peliculas.Country != 'N/A' ? peliculas.Country : "Informacion no existente"}</h3>
                                 <h3 class="ui placeholder card-text" style="color:blue;">Escrito:&nbsp  ${peliculas.Writer != 'N/A' ? peliculas.Writer : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Actores:&nbsp  ${peliculas.Actors != 'N/A' ? peliculas.Actors : "Informacion no existente"}</h3>
                                 <h3 class="ui placeholder card-text" style="color:blue;">Trama: &nbsp ${peliculas.Plot != 'N/A' ? peliculas.Plot : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Premios:&nbsp  ${peliculas.Awards != 'N/A' ? peliculas.Awards : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Metascore:&nbsp  ${peliculas.Metascore != 'N/A' ? peliculas.Metascore : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Rating:&nbsp  ${peliculas.imdbRating != 'N/A' ? peliculas.imdbRating : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Votes:&nbsp  ${peliculas.imdbVotes != 'N/A' ? peliculas.imdbVotes : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Type:&nbsp  ${peliculas.Type != 'N/A' ? peliculas.Type : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">DVD:&nbsp  ${peliculas.DVD != 'N/A' ? peliculas.DVD : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">BoxOffice:&nbsp  ${peliculas.BoxOffice != 'N/A' ? peliculas.BoxOffice : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Production:&nbsp  ${peliculas.Production != 'N/A' ? peliculas.Production : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Website:&nbsp  ${peliculas.Website != 'N/A' ? peliculas.Website : "Informacion no existente"}</h3>
+                                <h3 class="ui placeholder card-text" style="color:blue;">Response:&nbsp  ${peliculas.Response != 'N/A' ? peliculas.Response : "Informacion no existente"}</h3>
+
+
+
+
+
+
+
+
+
+
                                 
                             </div>
                         </div>
@@ -123,10 +144,10 @@ function detalles(det) {
 
             document.querySelector('#index1').innerHTML = html
         } else {
-           
+
         }
     };
-    xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + det +"&plot=full", true)
+    xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=a5ac401a&i=" + det + "&plot=full", true)
     xmlhttp.send()
 }
 
@@ -137,8 +158,6 @@ function detalles(det) {
 function siguiente(num) {
     numSiguiente = numSiguiente + (num);
     console.log(numSiguiente)
-
-
     if (numSiguiente <= 1) {
         numSiguiente = 1
         document.getElementById('atras').classList.add("disabled");
@@ -161,7 +180,5 @@ function siguiente(num) {
     let url = "http://www.omdbapi.com/?apikey=a5ac401a&s=" + nombre + "&page=" + numSiguiente
     console.log(url)
     buscar(url)
-
-
 
 }
