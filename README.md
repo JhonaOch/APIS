@@ -24,10 +24,12 @@ Busqueda
 ![4](https://user-images.githubusercontent.com/34308770/79176632-5e75da80-7dc6-11ea-9e26-966d0b8a4a4c.png)
 -----------
 Descripcion
+-----------
 ![5](https://user-images.githubusercontent.com/34308770/79176657-6f265080-7dc6-11ea-84cb-020f57723191.png)
 ![6](https://user-images.githubusercontent.com/34308770/79176688-82d1b700-7dc6-11ea-8baa-35879ff9d645.png)
 --------------
 Paginacion
+--------
 ![7](https://user-images.githubusercontent.com/34308770/79176703-90873c80-7dc6-11ea-8c3d-b227831d9d83.png)
 ----------
 Codigo realizado
